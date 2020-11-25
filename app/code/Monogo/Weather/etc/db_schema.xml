@@ -15,9 +15,8 @@
         <column xsi:type="smallint" name="wind_deg" comment="Wind direction" />
         <column xsi:type="smallint" name="pressure" comment="Pressure" />
         <column xsi:type="varchar" length="20" name="unit_type" comment="Unit type" />
-        <column xsi:type="varchar" length="20" name="metric" comment="Metric" />
         <column xsi:type="tinyint" name="humidity" comment="Humidity" />
-        <column xsi:type="datetime" name="created_date" comment="Created date" />
+        <column xsi:type="datetime" name="created_at" comment="Created at" />
 
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="id" />

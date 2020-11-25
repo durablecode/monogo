@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Config/etc/system_file.xsd">
+    <system>
+        <tab id="monogo_main_section" translate="label">
+            <label><![CDATA[Monogo]]></label>
+        </tab>
+
+        <section id="monogo_api" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Weather]]></label>
+            <tab>monogo_main_section</tab>
+            <resource>Monogo_Weather::settings</resource>
+
+            <group id="openweathermap" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>OpenWeatherMap</label>
+
+                <field id="api_key" translate="label" type="obscure" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Api key</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                </field>
+            </group>
+
+            <group id="current_weather" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Current weather</label>
+
+                <field id="country" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Country</label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                </field>
+
+                <field id="region" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Region/State</label>
+                </field>
+
+                <field id="translation" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Translation</label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                </field>
+
+                <field id="unit" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Unit</label>
+                    <source_model>Monogo\Weather\Model\Config\Source\Units</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
