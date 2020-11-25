@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resource>
+            <resource id="Magento_Backend::admin">
+                <resource id="Monogo_Weather::extension" title="Monogo" sortOrder="10">
+                    <resource id="Monogo_Weather::section" title="Weather" sortOrder="10">
+                        <resource id="Monogo_Weather::settings" title="Settings" sortOrder="10"/>
+                    </resource>
+                </resource>
+            </resource>
+        </resource>
+    </acl>
+</config>
