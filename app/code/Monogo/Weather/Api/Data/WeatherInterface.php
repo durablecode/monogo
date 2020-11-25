@@ -67,7 +67,7 @@ interface WeatherInterface
     /**
      * Metric
      */
-    public const METRIC = 'metric';
+//    public const METRIC = 'metric';
 
     /**
      * Humidity
@@ -135,9 +135,9 @@ interface WeatherInterface
     /**
      * Get temperature
      *
-     * @return string
+     * @return float
      */
-    public function getTemp(): string;
+    public function getTemp(): float;
 
     /**
      * Set maximum temperature
@@ -243,6 +243,21 @@ interface WeatherInterface
      * @return string
      */
     public function getUnit(): string;
+
+    /**
+     * Set humidity
+     *
+     * @param int $humidity
+     * @return $this
+     */
+    public function setHumidity(int $humidity);
+
+    /**
+     * Get humidity
+     *
+     * @return int
+     */
+    public function getHumidity(): int;
 
     /**
      * Set created at

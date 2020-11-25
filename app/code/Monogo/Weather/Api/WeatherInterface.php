@@ -9,8 +9,9 @@ namespace Monogo\Weather\Api;
 interface WeatherInterface
 {
     /**
+     *
      * @api
-     * @return []
+     * @return \Monogo\Weather\Api\Data\WeatherInterface
      */
     public function getCurrent();
 }

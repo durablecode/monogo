@@ -80,7 +80,7 @@ class Weather extends AbstractModel implements WeatherInterface
     /**
      * {@inheritDoc}
      */
-    public function getTemp(): string
+    public function getTemp(): float
     {
         return $this->getData(WeatherInterface::TEMPERATURE);
     }
@@ -195,6 +195,22 @@ class Weather extends AbstractModel implements WeatherInterface
     public function getUnit(): string
     {
         return $this->getData(WeatherInterface::UNIT_TYPE);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setHumidity(int $humidity)
+    {
+        return $this->setData(WeatherInterface::HUMIDITY, $humidity);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getHumidity(): int
+    {
+        return $this->getData(WeatherInterface::HUMIDITY);
     }
 
     /**
