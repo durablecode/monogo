@@ -3,14 +3,17 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
     <acl>
-        <resource>
+        <resources>
             <resource id="Magento_Backend::admin">
-                <resource id="Monogo_Weather::extension" title="Monogo" sortOrder="10">
-                    <resource id="Monogo_Weather::section" title="Weather" sortOrder="10">
-                        <resource id="Monogo_Weather::settings" title="Settings" sortOrder="10"/>
+                <resource id="Monogo_Weather::extension" title="Monogo" translate="title" sortOrder="10">
+                    <resource id="Monogo_Weather::section_weather" title="Weather" translate="title" sortOrder="10">
+                        <resource id="Monogo_Weather::settings" title="Settings" translate="title" sortOrder="10"/>
+                        <resource id="Monogo_Weather::menu" title="Weather Menu" translate="title" sortOrder="20">
+                            <resource id="Monogo_Weather::weather_log_listing" title="Grid" translate="title" sortOrder="10"/>
+                        </resource>
                     </resource>
                 </resource>
             </resource>
-        </resource>
+        </resources>
     </acl>
 </config>
