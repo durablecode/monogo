@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="monogo_weather_history" resource="default" engine="innodb" comment="Weather History">
+        <column xsi:type="int" name="id" padding="10" unsigned="false" nullable="false" identity="true" comment="Entity Id" />
+        <column xsi:type="varchar" length="5" name="wind_icon_id" comment="Wind icon id" />
+        <column xsi:type="varchar" length="255" name="description" comment="Description" />
+        <column xsi:type="varchar" length="35" name="city" comment="City" />
+        <column xsi:type="varchar" length="3" name="country" comment="Country" />
+        <column xsi:type="float" precision="5" scale="2" name="temp" comment="Temperature" />
+        <column xsi:type="float" precision="5" scale="2" name="temp_min" comment="Minimal temperature" />
+        <column xsi:type="float" precision="5" scale="2" name="temp_max" comment="Maximum temperature" />
+        <column xsi:type="tinyint" name="wind_speed" comment="Wind speed" />
+        <column xsi:type="smallint" name="wind_deg" comment="Wind direction" />
+        <column xsi:type="smallint" name="pressure" comment="Pressure" />
+        <column xsi:type="varchar" length="20" name="unit_type" comment="Unit type" />
+        <column xsi:type="varchar" length="20" name="metric" comment="Metric" />
+        <column xsi:type="tinyint" name="humidity" comment="Humidity" />
+        <column xsi:type="datetime" name="created_date" comment="Created date" />
+
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id" />
+        </constraint>
+    </table>
+</schema>
