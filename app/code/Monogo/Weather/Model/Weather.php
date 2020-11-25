@@ -24,7 +24,7 @@ class Weather extends AbstractModel implements WeatherInterface
     /**
      * {@inheritDoc}
      */
-    public function setDescription(string $description): self
+    public function setDescription(string $description)
     {
         return $this->setData(WeatherInterface::DESCRIPTION, $description);
     }
@@ -40,7 +40,7 @@ class Weather extends AbstractModel implements WeatherInterface
     /**
      * {@inheritDoc}
      */
-    public function setCity(string $city): self
+    public function setCity(string $city)
     {
         return $this->setData(WeatherInterface::CITY, $city);
     }
@@ -56,7 +56,7 @@ class Weather extends AbstractModel implements WeatherInterface
     /**
      * {@inheritDoc}
      */
-    public function setCountry(string $country): self
+    public function setCountry(string $country)
     {
         return $this->setData(WeatherInterface::COUNTRY, $country);
     }
@@ -72,7 +72,7 @@ class Weather extends AbstractModel implements WeatherInterface
     /**
      * {@inheritDoc}
      */
-    public function setTemp(float $temp): self
+    public function setTemp(float $temp)
     {
         return $this->setData(WeatherInterface::TEMPERATURE, $temp);
     }
@@ -88,7 +88,7 @@ class Weather extends AbstractModel implements WeatherInterface
     /**
      * {@inheritDoc}
      */
-    public function setMaxTemp(float $temp): self
+    public function setMaxTemp(float $temp)
     {
         return $this->setData(WeatherInterface::MAXIMUM_TEMPERATURE, $temp);
     }
@@ -104,7 +104,7 @@ class Weather extends AbstractModel implements WeatherInterface
     /**
      * {@inheritDoc}
      */
-    public function setMinTemp(float $temp): self
+    public function setMinTemp(float $temp)
     {
         return $this->setData(WeatherInterface::MINIMUM_TEMPERATURE, $temp);
     }
@@ -120,7 +120,7 @@ class Weather extends AbstractModel implements WeatherInterface
     /**
      * {@inheritDoc}
      */
-    public function setWindIconId(string $iconId): self
+    public function setWindIconId(string $iconId)
     {
         return $this->setData(WeatherInterface::WIND_ICON_ID, $iconId);
     }
@@ -136,7 +136,7 @@ class Weather extends AbstractModel implements WeatherInterface
     /**
      * {@inheritDoc}
      */
-    public function setWindSpeed(int $speed): self
+    public function setWindSpeed(int $speed)
     {
         return $this->setData(WeatherInterface::WIND_SPEED, $speed);
     }
@@ -152,7 +152,7 @@ class Weather extends AbstractModel implements WeatherInterface
     /**
      * {@inheritDoc}
      */
-    public function setWindDeg(int $deg): self
+    public function setWindDeg(int $deg)
     {
         return $this->setData(WeatherInterface::WIND_DEG, $deg);
     }
@@ -168,7 +168,7 @@ class Weather extends AbstractModel implements WeatherInterface
     /**
      * {@inheritDoc}
      */
-    public function setPressure(int $pressure): self
+    public function setPressure(int $pressure)
     {
         return $this->setData(WeatherInterface::PRESSURE, $pressure);
     }
@@ -184,7 +184,7 @@ class Weather extends AbstractModel implements WeatherInterface
     /**
      * {@inheritDoc}
      */
-    public function setUnit(string $type): self
+    public function setUnit(string $type)
     {
         return $this->setData(WeatherInterface::UNIT_TYPE, $type);
     }
@@ -200,7 +200,7 @@ class Weather extends AbstractModel implements WeatherInterface
     /**
      * {@inheritDoc}
      */
-    public function setCreatedAt($date): self
+    public function setCreatedAt($date)
     {
         return $this->setData(WeatherInterface::CREATED_AT, $date);
     }

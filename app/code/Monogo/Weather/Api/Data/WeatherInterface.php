@@ -85,7 +85,7 @@ interface WeatherInterface
      * @param string $description
      * @return $this
      */
-    public function setDescription(string $description): self;
+    public function setDescription(string $description);
 
     /**
      * Get description
@@ -100,7 +100,7 @@ interface WeatherInterface
      * @param string $city
      * @return $this
      */
-    public function setCity(string $city): self;
+    public function setCity(string $city);
 
     /**
      * Get city
@@ -115,7 +115,7 @@ interface WeatherInterface
      * @param string $country
      * @return $this
      */
-    public function setCountry(string $country): self;
+    public function setCountry(string $country);
 
     /**
      * Get country code
@@ -130,7 +130,7 @@ interface WeatherInterface
      * @param float $temp
      * @return $this
      */
-    public function setTemp(float $temp): self;
+    public function setTemp(float $temp);
 
     /**
      * Get temperature
@@ -145,7 +145,7 @@ interface WeatherInterface
      * @param float $temp
      * @return $this
      */
-    public function setMaxTemp(float $temp): self;
+    public function setMaxTemp(float $temp);
 
     /**
      * Get maximum temperature
@@ -160,7 +160,7 @@ interface WeatherInterface
      * @param float $temp
      * @return $this
      */
-    public function setMinTemp(float $temp): self;
+    public function setMinTemp(float $temp);
 
     /**
      * Get minimum temperature
@@ -175,7 +175,7 @@ interface WeatherInterface
      * @param string $iconId
      * @return $this
      */
-    public function setWindIconId(string $iconId): self;
+    public function setWindIconId(string $iconId);
 
     /**
      * Get wind icon id
@@ -190,7 +190,7 @@ interface WeatherInterface
      * @param int $speed
      * @return $this
      */
-    public function setWindSpeed(int $speed): self;
+    public function setWindSpeed(int $speed);
 
     /**
      * Get wind speed
@@ -205,7 +205,7 @@ interface WeatherInterface
      * @param int $deg
      * @return $this
      */
-    public function setWindDeg(int $deg): self;
+    public function setWindDeg(int $deg);
 
     /**
      * Get wind direction
@@ -220,7 +220,7 @@ interface WeatherInterface
      * @param int $pressure
      * @return $this
      */
-    public function setPressure(int $pressure): self;
+    public function setPressure(int $pressure);
 
     /**
      * Get pressure
@@ -235,7 +235,7 @@ interface WeatherInterface
      * @param string $type
      * @return $this
      */
-    public function setUnit(string $type): self;
+    public function setUnit(string $type);
 
     /**
      * Get unit
@@ -250,7 +250,7 @@ interface WeatherInterface
      * @param $date
      * @return $this
      */
-    public function setCreatedAt($date): self;
+    public function setCreatedAt($date);
 
     /**
      * Get created at
