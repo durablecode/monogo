@@ -17,6 +17,7 @@
                 <field id="api_key" translate="label" type="obscure" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Api key</label>
                     <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                    <validate>required-entry</validate>
                 </field>
             </group>
 
@@ -26,25 +27,30 @@
                 <field id="country" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Country</label>
                     <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                    <validate>validate-select</validate>
                 </field>
 
                 <field id="region" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Region/State</label>
+                    <validate>required-entry</validate>
                 </field>
 
                 <field id="translation" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Translation</label>
                     <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                    <validate>validate-select</validate>
                 </field>
 
                 <field id="unit" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Unit</label>
                     <source_model>Monogo\Weather\Model\Config\Source\Units</source_model>
+                    <validate>validate-select</validate>
                 </field>
 
                 <field id="refresh_time" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Refresh</label>
-                    <comment>Every how many minutes should refresh weather on store</comment>
+                    <validate>required-entry validate-number</validate>
+                    <comment>How often (minutes) should refresh weather on store</comment>
                 </field>
             </group>
         </section>
