@@ -32,13 +32,18 @@ class CurrentWeather extends ConfigAbstract
     private const UNIT = 'monogo_api/current_weather/unit';
 
     /**
+     * @var string
+     */
+    private const REFRESH_WEATHER = 'monogo_api/current_weather/refresh_time';
+
+    /**
      * Get region
      *
      * @return string
      */
     public function getRegion(): string
     {
-        return $this->getValueByPath(self::REGION);
+        return (string) $this->getValueByPath(self::REGION);
     }
 
     /**
@@ -48,7 +53,7 @@ class CurrentWeather extends ConfigAbstract
      */
     public function getCountry(): string
     {
-        return $this->getValueByPath(self::COUNTRY);
+        return (string) $this->getValueByPath(self::COUNTRY);
     }
 
     /**
@@ -58,7 +63,7 @@ class CurrentWeather extends ConfigAbstract
      */
     public function getTranslation(): string
     {
-        return $this->getValueByPath(self::TRANSLATION);
+        return (string) $this->getValueByPath(self::TRANSLATION);
     }
 
     /**
@@ -68,6 +73,16 @@ class CurrentWeather extends ConfigAbstract
      */
     public function getUnit(): string
     {
-        return $this->getValueByPath(self::UNIT);
+        return (string) $this->getValueByPath(self::UNIT);
+    }
+
+    /**
+     * Get time to refresh weather on store
+     *
+     * @return int
+     */
+    public function getRefreshTime(): int
+    {
+        return (int) $this->getValueByPath(self::REFRESH_WEATHER);
     }
 }

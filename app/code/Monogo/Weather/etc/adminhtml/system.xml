@@ -41,6 +41,11 @@
                     <label>Unit</label>
                     <source_model>Monogo\Weather\Model\Config\Source\Units</source_model>
                 </field>
+
+                <field id="refresh_time" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Refresh</label>
+                    <comment>Every how many minutes should refresh weather on store</comment>
+                </field>
             </group>
         </section>
     </system>
