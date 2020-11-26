@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <monogo_api>
+            <current_weather>
+                <refresh_time>10</refresh_time>
+                <country>PL</country>
+                <region>Lublin</region>
+                <translation>PL</translation>
+                <unit>metric</unit>
+            </current_weather>
+        </monogo_api>
+    </default>
+</config>

@@ -78,7 +78,7 @@ class Weather implements WeatherInterface
     /**
      * {@InheritDoc}
      */
-    public function getCurrent(): DataWeatherInterface
+    public function getCurrent()
     {
         $url = $this->api->buildUrl([
             [
@@ -92,30 +92,38 @@ class Weather implements WeatherInterface
             ]
         ]);
 
+        $data = ['error' => 400];
+        $lastItemData = $this->weatherCollection->getLastItem()->getData();
+
+        if(!empty($lastItemData)) {
+            $data = $this->setupDataToDTO($lastItemData);
+        }
+
         if($this->canAddRow()) {
             $this->api->get($url);
             $body = $this->api->getBody();
-            $weatherData = current($body['weather']);
 
-            //conversion data to common array with the same indexes
-            $data = $this->setupDataToDTO([
-               'description' => $weatherData['description'],
-                'city' => $this->currentWeatherConfig->getRegion(),
-                'country' => $this->currentWeatherConfig->getCountry(),
-                'temp' => $body['main']['temp'],
-                'temp_max' => $body['main']['temp_max'],
-                'temp_min' => $body['main']['temp_min'],
-                'wind_icon_id' => $weatherData['icon'],
-                'wind_speed' => $body['wind']['speed'],
-                'wind_deg' => $body['wind']['deg'],
-                'pressure' => $body['main']['pressure'],
-                'unit_type' => $this->currentWeatherConfig->getUnit(),
-                'humidity' => $body['main']['humidity'],
-                'created_at' => $this->dateTime->gmtDate()
-            ]);
-            $this->weatherRepository->save($data);
-        } else {
-            $data = $this->setupDataToDTO($this->weatherCollection->getLastItem()->getData());
+            if(!is_null($body)) {
+                $weatherData = current($body['weather']);
+
+                //conversion data to common array with the same indexes
+                $data = $this->setupDataToDTO([
+                    'description' => $weatherData['description'],
+                    'city' => $this->currentWeatherConfig->getRegion(),
+                    'country' => $this->currentWeatherConfig->getCountry(),
+                    'temp' => $body['main']['temp'],
+                    'temp_max' => $body['main']['temp_max'],
+                    'temp_min' => $body['main']['temp_min'],
+                    'wind_icon_id' => $weatherData['icon'],
+                    'wind_speed' => $body['wind']['speed'],
+                    'wind_deg' => $body['wind']['deg'],
+                    'pressure' => $body['main']['pressure'],
+                    'unit_type' => $this->currentWeatherConfig->getUnit(),
+                    'humidity' => $body['main']['humidity'],
+                    'created_at' => $this->dateTime->gmtDate()
+                ]);
+                $this->weatherRepository->save($data);
+            }
         }
 
         return $data;
@@ -152,7 +160,7 @@ class Weather implements WeatherInterface
     {
         $lastRow = $this->weatherCollection->getLastItem();
 
-        if(!is_null($lastRow)) {
+        if(!empty($lastRow->getData())) {
             $lastRowTime = strtotime($lastRow->getCreatedAt());
             $currentTime = $this->dateTime->gmtTimestamp();
 
