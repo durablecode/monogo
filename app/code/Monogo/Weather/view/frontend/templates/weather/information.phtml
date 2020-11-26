@@ -1,0 +1,22 @@
+<?php
+/** @var $block Monogo\Weather\Block\Weather */
+?>
+
+<div data-bind="scope: 'weather_information'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "weather_information": {
+                        "component": "Monogo_Weather/js/weather/information",
+                        "refreshInterval": "<?= $block->escapeJs($block->getRefreshTime()) ?>"
+                    }
+                }
+            }
+        }
+    }
+</script>
