@@ -48,9 +48,9 @@
                 </field>
 
                 <field id="refresh_time" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Refresh</label>
+                    <label>Refresh interval</label>
                     <validate>required-entry validate-number</validate>
-                    <comment>How often (minutes) should refresh weather on store</comment>
+                    <comment>How often (minutes) should refresh weather data on store</comment>
                 </field>
             </group>
         </section>

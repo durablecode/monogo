@@ -21,7 +21,6 @@ define([
                 .observe(['description', 'temp', 'tempMin', 'tempMax', 'windSpeed', 'windDeg', 'pressure', 'humidity', 'countDown']);
         },
         initialize: function (config) {
-            console.log(config);
             var self = this,
                 refreshTime = config.refreshInterval * 60000,
                 countDown = refreshTime,
