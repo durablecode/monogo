@@ -22,11 +22,6 @@ class ApiTest extends TestCase
     private $openWeatherMapConfigMock;
 
     /**
-     * @var ObjectManagerHelper
-     */
-    private $objectManagerHelper;
-
-    /**
      * @var MockObject
      */
     private $jsonMock;
@@ -49,8 +44,8 @@ class ApiTest extends TestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $this->objectManagerHelper = new ObjectManagerHelper($this);
-        $this->object = $this->objectManagerHelper->getObject(
+        $objectManagerHelper = new ObjectManagerHelper($this);
+        $this->object = $objectManagerHelper->getObject(
             Api::class,
             [
                 'openWeatherMapConfig' => $this->openWeatherMapConfigMock,
