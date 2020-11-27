@@ -38,7 +38,7 @@ class Weather extends Template
     /**
      * @return int
      */
-    public function getRefreshTime()
+    public function getRefreshTime(): int
     {
         return $this->currentWeather->getRefreshTime();
     }
